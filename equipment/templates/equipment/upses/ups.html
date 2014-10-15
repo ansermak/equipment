@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>UPS</h1>
+
+Инвентарный номер: {{ ups.inum }}<br/>
+Serial/Service Tag: {{ ups.serial_number }}<br/>
+Модель: {{ ups.model }}<br/>
+Пользователь: <a href="{% url 'user' ups.user %}">{{ ups.user }}</a><br/>
+Отдел: <a href="{% url 'department' ups.department %}">{{ ups.department }}</a><br/>
+{% endblock %}

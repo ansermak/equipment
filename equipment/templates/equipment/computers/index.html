@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% if computers_list %}
+    <div class="main">
+        <ul>
+            {% for computers in computers_list %}
+                <li><a href="{% url 'computer' computers.inum %}">{{ computers.comp_name }}</a>
+                <a href="{% url 'department' computers.department %}">{{ computers.department }}</a>
+                <a href="{% url 'user' computers.user %}">{{ computers.user }}</a>
+            {% endfor %}
+        </ul>
+    </main>
+{% else %}
+    <p>No computers are available. </p>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,9 @@
+<ul>
+    {% for menu_item in menu_list1 %}
+        <li>
+        <!--<a href ="/computers/users/{{ computers.user }}/">{{ computers.user }}</a>-->
+        <a href="{% url 'department' menu_item.department_name %}">{{ menu_item.department_name }}</a>
+        </li>
+    {% endfor %}
+</ul>
+

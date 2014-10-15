@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>{{ computer.comp_name }}</h1>
+<table>
+    <tr><td>Инвентарный номер:</td><td>{{ computer.inum }}</td></tr>
+    <tr><td>Serial/Service Tag:</td><td>{{ computer.serial_number }}</td></tr>
+    <tr><td>Модель:</td><td>{{ computer.model }}</td></tr>
+    <tr><td>ОС:</td><td>{{ computer.os }}</td></tr>
+    <tr><td>Пользователь:</td><td><a href="{% url 'user' computer.user %}">{{ computer.user }}</a></td></tr>
+    <tr><td>Отдел:</td><td><a href="{% url 'department' computer.department %}">{{ computer.department }}</a></td></tr>
+</table>
+
+{% endblock %}

@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+    <head>
+        {% load staticfiles %}
+        <title>GfK Ukraine inventory</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'equipment/style.css' %}" />
+        <a href="/"><div id="logo"></div></a>
+    </head>
+    <body>
+        <div "id=container">
+
+            <div id="side_menu">
+                {% block side_menu %}
+                    {% load base_menu %}
+                    {% important_function %}
+                {% endblock %}
+            </div>
+            <div id="content">
+                {% block content %}
+                    example
+                {% endblock %}
+            </div>
+        </div>
+    </body>
+</html>

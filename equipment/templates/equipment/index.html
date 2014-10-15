@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+{% if departments_list %}
+    <ul>
+        {% for department in departments_list %}
+            <li>
+            <!--<a href ="/computers/users/{{ computers.user }}/">{{ computers.user }}</a>-->
+            <a href="{% url 'department' department.department_name %}">{{ department.department_name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>По запросу ничего не найдено. </p>
+{% endif %}
+{% endblock %}

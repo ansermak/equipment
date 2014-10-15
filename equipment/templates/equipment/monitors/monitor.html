@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Монитор</h1>
+
+Инвентарный номер: {{ monitor.inum }}<br/>
+Serial/Service Tag: {{ monitor.serial_number }}<br/>
+Модель: {{ monitor.model }}<br/>
+Пользователь: <a href="{% url 'user' monitor.user %}">{{ monitor.user }}</a><br/>
+Отдел: <a href="{% url 'department' monitor.department %}">{{ monitor.department }}</a><br/>
+
+{% endblock %}

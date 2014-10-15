@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>{{ username}}</h1>
+{% if computers_list or upses_list or monitors_list %}
+    <ul>
+        <p>Список компьютеров:</p>
+        {% for computers in computers_list %}
+            <li>
+            <!--<a href ="/computers/users/{{ computers.user }}/">{{ computers.user }}</a>-->
+            <a href="/equipment/computers/{{ computers.inum}}/">{{ computers.comp_name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>По запросу ничего не найдено. </p>
+{% endif %}
+
+{% if monitors_list %}
+    <ul>
+        <p>Список мониторов:</p>
+        {% for monitor in monitors_list %}
+            <li>
+            <a href="{% url 'monitor' monitor.inum %}">{{ monitor.inum }}</a>
+            {{ monitor.model }}
+            </li>
+        {% endfor %}
+    </ul>
+{% endif %}
+{% if upses_list %}
+    <ul>
+        <p>Список UPS:</p>
+        {% for ups in upses_list %}
+            <li>
+            <a href="{% url 'ups' ups.inum %}">{{ ups.inum }}</a>
+            {{ ups.model }}
+            </li>
+        {% endfor %}
+    </ul>
+{% endif %}
+{% endblock %}
+
